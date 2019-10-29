@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+// User Defined Components
+import Header from './components/header/Header';
+
+const api_key = "79a8cfa0bfe2f572624a45b859b24485";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+     
+    }
+  }
+
+  getMovie = async (e) => {
+    
+    const movie_name = e.target.elements.movie_name.value;
+
+    e.preventDefault();
+    
+    const api_call = await fetch(
+    );
+    const response = await api_call.json();
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <Header />
+      </div>
+    )
+  }
 }
 
 export default App;
