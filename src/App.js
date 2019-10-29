@@ -36,18 +36,25 @@ class App extends React.Component {
     const response = await api_call.json();
 
     console.log(response);
-    this.setState({
-      title: response.Title,
-      year: response.Year,
-      country: response.Country,
-      released: response.Released,
-      genre: response.Genre,
-      director: response.Director,
-      actors: response.Actors,
-      rating: response.imdbRating,
-      poster: response.Poster,
-      error: "Please enter a valid movie name"
-    })
+    if(movie_name){
+      this.setState({
+        title: response.Title,
+        year: response.Year,
+        country: response.Country,
+        released: response.Released,
+        genre: response.Genre,
+        director: response.Director,
+        actors: response.Actors,
+        rating: response.imdbRating,
+        poster: response.Poster,
+        error: "Please enter a valid movie name"
+      });
+    }
+    else {
+      this.setState({
+        error: "Please enter a valid movie name"
+      });
+    }
   }
 
   render() {

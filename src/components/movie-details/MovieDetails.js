@@ -13,7 +13,6 @@ const MovieDetails = (props) => {
             { props.director && <p>Director: { props.director }</p> }
             { props.actors && <p>Actors: { props.actors }</p> }
             { props.rating && <p>Rating: { props.rating }/10</p> }
-
         </div>
     )
 }
